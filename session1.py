@@ -29,8 +29,8 @@ def sum_of_mults_before(factor1, factor2, limit):
     need_remove_mults_both = 0
 
     # Takes number of int multiples of each individual factor to sum.
-    count_factors_from_1 = int(limit/factor1)
-    count_factors_from_2 = int(limit/factor2)
+    count_factors_from_1 = int((limit-1)/factor1)
+    count_factors_from_2 = int((limit-1)/factor2)
 
     # Sums all multiples of each factor to our multiple sum result variable.
     if count_factors_from_1 > 0:
@@ -45,7 +45,7 @@ def sum_of_mults_before(factor1, factor2, limit):
 
     # Removes duplicates of multiples of both factors from our multiple sum.
     if need_remove_mults_both == 2:
-        count_double_factors = int(limit/(factor1*factor2))
+        count_double_factors = int((limit-1)/(factor1*factor2))
         if(count_double_factors > 0):
             mult_sum -= int(additive_sum(factor1*factor2, factor1*factor2, count_double_factors))
     
