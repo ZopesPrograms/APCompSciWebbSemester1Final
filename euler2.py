@@ -5,9 +5,18 @@ def fibonacci(base1=1, base2=2, count=3, stringres=False):
         
     Input: base1 (default=1) -- FLOAT, base2 (default=2) -- FLOAT,
            count (default=3) -- INT, stringres (default=False) -- BOOL
-           
-    Output: 
+
+    Output: fibonacci sum
     '''
+
+    assert (type(base1) == int or type(base1) == float), (str(base1) + ' is not of numerical type!')
+    assert (type(base2) == int or type(base2) == float), (str(base2) + ' is not of numerical type!')
+
+    assert type(count) == int, (str(count) + ' is not a positive integer!')
+    assert count > 0, (str(count) + ' is not a positive integer!')
+
+    assert type(stringres) == bool, (str(stringres) + ' is not bool value!')
+
     if (count-2) == 1:
         if stringres == False:
             return base1 + base2
