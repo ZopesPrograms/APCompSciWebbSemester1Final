@@ -14,23 +14,23 @@ def binarysearch(x, listv, offset=0):
         if x < midval:
             print('Middle index is ' + str(mid + 1))
             del listv[mid+1:]
-            print('Listv to ' + str(listv))
-            return binarysearch(x, listv, mid+offset)
+            print('Listv to A ' + str(listv))
+            return binarysearch(x, listv, offset+mid)
         elif x > midval:
             print('Middle index is ' + str(mid))
             del listv[:mid]
-            print('Listv to ' + str(listv))
-            return binarysearch(x, listv, offset-mid)
+            print('Listv to B ' + str(listv))
+            return binarysearch(x, listv, offset+mid)
     else:
         midval = listv[mid]
         if midval == x:
             return mid+offset
         elif x < midval:
             del listv[mid:]
-            return binarysearch(x, listv, mid+offset)
+            return binarysearch(x, listv, offset+mid)
         elif x > midval:
             del listv[:mid+1]
-            return binarysearch(x, listv, offset-mid)
+            return binarysearch(x, listv, offset+mid)
 
 if __name__ == '__main__':
     print(binarysearch(7, [0,1,2,3,4,5,7,8,9,10]))
