@@ -1,19 +1,5 @@
-''' THIS CODE WANTS TO BE THE VERY BEST,
-    LIKE NO CODE EVER WAS,
-    BA BA BA DA,
-    IT WANTS TO FIND THE BIGGEST PRIME
-    UNDER
-    600851475143,
-    PROBABLY DIVIDE THE NUMBER BY HALF,
-    USE PRIME SEARCHING ALGORITHMS,
-    TO FIND ALL PRIMES BELOW
-    600851475143,
-    AND SEE IF IT IS DIVISIBLE BY THEM,
-    MAYBE?
-    WHAT ELSE IS
-    600851475143
-    DIVISIBLE BY?
-    3 or 7 or etc.?
-    GOTTA FIGURE THAT OUT
-    FOR THE MATHS
-    TO FIND OUR QUARRY'S RANGE! '''
+def find_largest_palindrome():
+    return -1
+
+if __name__ == '__main__':
+    print(find_largest_palindrome())
