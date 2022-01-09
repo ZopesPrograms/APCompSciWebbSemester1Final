@@ -10,7 +10,7 @@ def is_palindrome(num):
         seg1 = ''.join(digits[:ceil(middle)])
         print('People who don\'t know be like: ' + seg1)
 
-        seg2 = ''.join(digits[ceil(middle):])
+        seg2 = ''.join(reversed(digits[ceil(middle):]))
         print('People who know: ' + seg2)
 
         return (seg1 == seg2)
@@ -18,7 +18,7 @@ def is_palindrome(num):
         seg1 = ''.join(digits[:middle])
         print('People who don\'t know be like: ' + seg1)
 
-        seg2 = ''.join(digits[middle+1:])
+        seg2 = ''.join(reversed(digits[middle+1:]))
         print('People who know: ' + seg2)
 
         return (seg1 == seg2)
