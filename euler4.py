@@ -26,6 +26,12 @@ def is_palindrome(num):
 
 def find_largest_palindrome(base10):
     toolarge = 10**(2 * base10)
+    toosmall = 10**(2(base10-1))
+
+    last_palindrome = toolarge-1
+    digits = list(str(last_palindrome))
+
+    while last_palindrome > toosmall:
 
     return -1
 
