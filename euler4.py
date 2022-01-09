@@ -1,9 +1,9 @@
 from math import *
 
 def is_palindrome(num):
-    assert len(num) > 1, 'Palindrome must have more than one element to compare'
-
     digits = list(str(num))
+    assert len(digits) > 1, 'Palindrome must have more than one element to compare'
+
     middle = (len(num) - 1) / 2
 
     if len(num) % 2 == 0:
@@ -24,4 +24,5 @@ def find_largest_palindrome(base10):
     return -1
 
 if __name__ == '__main__':
-    print(find_largest_palindrome(3))
+    #print(find_largest_palindrome(3))
+    print(is_palindrome(1001))
