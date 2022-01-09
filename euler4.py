@@ -4,7 +4,7 @@ def is_palindrome(num):
     digits = list(str(num))
     assert len(digits) > 1, 'Palindrome must have more than one element to compare'
 
-    middle = (len(num) - 1) / 2
+    middle = (len(digits) - 1) / 2
 
     if len(num) % 2 == 0:
         seg1 = ''.join(digits[:ceil(middle)])
