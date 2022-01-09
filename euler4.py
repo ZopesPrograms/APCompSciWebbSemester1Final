@@ -11,6 +11,11 @@ def is_palindrome(num):
         seg2 = ''.join(digits[ceil(middle):])
 
         return (seg1 == seg2)
+    else:
+        seg1 = ''.join(digits[:middle])
+        seg2 = ''.join(digits[middle+1:])
+
+        return (seg1 == seg2)
 
 
 def find_largest_palindrome(base10):
