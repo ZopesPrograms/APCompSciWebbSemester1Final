@@ -54,7 +54,7 @@ def find_largest_palindrome(base10):
     middle_digit = False
 
     while last_palindrome > toosmall:
-        print(last_palindrome)
+        print(factor_int(last_palindrome))
         if floor(log10(last_palindrome)) % 2 == 0:
             middle_digit = True
         
