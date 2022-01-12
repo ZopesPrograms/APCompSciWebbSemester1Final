@@ -49,10 +49,25 @@ def find_largest_palindrome(base10):
     toosmall = 10**(2*(base10-1))
 
     last_palindrome = toolarge-1
-    print(is_palindrome(last_palindrome,True))
+    iteration = int(is_palindrome(last_palindrome, True))
+
+    middle_digit = False
+
+    while last_palindrome > toosmall:
+        print(last_palindrome)
+        if floor(log10(last_palindrome)) % 2 == 0:
+            middle_digit = True
+        
+        #if middle_digit:
+        #    for i in range(0,9):
+        iteration -= 1
+        if middle_digit:
+            print('BRUH')
+        else:
+            last_palindrome = int(str(iteration) + ''.join(reversed(list(str(iteration)))))
 
     return -1
 
 if __name__ == '__main__':
     print(find_largest_palindrome(3))
-    print(is_palindrome(12121))
+    #print(is_palindrome(12121))
