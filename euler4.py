@@ -78,35 +78,49 @@ def find_largest_palindrome(base10):
     last_palindrome = toolarge-1
     iteration = int(is_palindrome(last_palindrome, True))
 
+    # Middle digit iteration management variables
     middle_digit = False
     middig = 9
 
+    # Controls whether function should continue running, then prints palindrome
     runcheck = True
     print(last_palindrome)
 
+    # While the palindrome being checked is larger than "toosmall"
     while last_palindrome > toosmall:
+
+        # Checks if middle digit need be added for iteration
         if floor(log10(last_palindrome)) % 2 == 0:
             middle_digit = True
-        
+
+        # Iterates middle digit if present
         if middle_digit:
             while middig > 9 and runcheck:
                 middig -= 1
 
+        # Iterates palindrome by decreasing digits outwards from center
         iteration -= 1
+
         if middle_digit:
+            # Iterates palindromes with middle digit into last_palindrome
             last_palindrome = int(str(iteration) + str(middig) + ''.join(reversed(list(str(iteration)))))
             print(last_palindrome)
         else:
+            # Iterates palindromes without middle digit into last_palindrome
             if floor(log10(iteration)) == floor(log10(iteration+1)):
                 last_palindrome = int(str(iteration) + ''.join(reversed(list(str(iteration)))))
             else:
+                ''' Iterates palindromes with middle digit into last_palindrome --
+                    adds middle digit to account for digit rollover error. '''
                 temp = int(str(iteration) + '9' + ''.join(reversed(list(str(iteration)))))
                 print("Bruh: " + str(temp))
                 last_palindrome = temp
 
-
+    # Temporary patch since desired palindrome not found
     return -1
 
+''' MAIN CODE BLOCK '''
 if __name__ == '__main__':
+    
+    # For testing purposes
     print(find_largest_palindrome(3))
-    #print(is_palindrome(12121))
