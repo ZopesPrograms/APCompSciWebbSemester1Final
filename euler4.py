@@ -29,32 +29,37 @@ def is_palindrome(num, mustsplit=False):
             if mustplit=True, returns first segment up to midpoint of num
                               palindrome.
     '''
+
+    # Take digits of num as character list, make sure num is not a lone number
     digits = list(str(num))
     assert len(digits) > 1, 'Palindrome must have more than one element to compare'
 
+    # Find middle of palindrome
     middle = (len(digits) - 1) / 2
 
     if len(digits) % 2 == 0:
+        ''' Divide num into two segments from middle, reverses 
+        one side for comparison. '''
         seg1 = ''.join(digits[:ceil(middle)])
-        print('People who don\'t know be like: ' + seg1)
-
         seg2 = ''.join(reversed(digits[ceil(middle):]))
-        print('People who know: ' + seg2)
 
+        # Return first part of palindrome if mustsplit=True
         if mustsplit:
             return seg1
 
+        # Compare seg1, seg2, if not same return false, if same return true
         return (seg1 == seg2)
     else:
+        ''' Divide num into two segments from middle, reverses 
+        one side for comparison. '''
         seg1 = ''.join(digits[:int(middle)])
-        print('People who don\'t know be like: ' + seg1)
+        seg2 = ''.join(reversed(digits[int(middle+1):]))
 
+        # Return first part of palindrome if mustsplit=True
         if mustsplit:
             return seg1
 
-        seg2 = ''.join(reversed(digits[int(middle+1):]))
-        print('People who know: ' + seg2)
-
+        # Compare seg1, seg2, if not same return false, if same return true
         return (seg1 == seg2)
 
 def find_largest_palindrome(base10):
