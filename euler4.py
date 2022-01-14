@@ -54,8 +54,6 @@ def find_largest_palindrome(base10):
     middle_digit = False
     middig = 9
 
-    dig_down = 0
-
     runcheck = True
     print(last_palindrome)
 
@@ -75,12 +73,10 @@ def find_largest_palindrome(base10):
             if floor(log10(iteration)) == floor(log10(iteration+1)):
                 last_palindrome = int(str(iteration) + ''.join(reversed(list(str(iteration)))))
             else:
-                if (dig_down-1)%2 == 0:
-                    last_palindrome = int(str(iteration) + '9' + ''.join(reversed(list(str(iteration)))))
-                else:
-                    last_palindrome = int(str(iteration) + '99' + ''.join(reversed(list(str(iteration)))))
-                dig_down += 1
-            print(last_palindrome)
+                temp = int(str(iteration) + '9' + ''.join(reversed(list(str(iteration)))))
+                print("Bruh: " + str(temp))
+                last_palindrome = temp
+
 
     return -1
 
