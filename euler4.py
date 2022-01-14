@@ -1,21 +1,34 @@
 from math import *
 
 def factor_int(num):
-    
+    ''' Factors number input num.
+
+    Input: num > 0 (int)
+    Output: list of integer factors of num'''
+
+    # Tests if function input is valid
     assert type(num) == int, (str(num) + " is not an factorable integer!")
     assert num > 1, (str(num) + " is not an factorable integer!")
 
-    ''' Finds smallest prime divisor of num, extracts it, then extracts the
-        next prime divisor of num through recursion then extracts the next
-        prime divisor, and so on until the last, largest prime divisor is
-        found. '''
+    ''' Loops through possible factors of num, factors out the
+        smallest, appends it as start of list element continued
+        by recursive function call '''
+        
     for i in range(2, ceil(num/2)):
         if num % i == 0:
             return [i] + factor_int(int(num/i))
-    # Returns number if no divisor is found (num is prime, ergo it is largest prime)
+    # Returns number if no divisor is found (num is prime, so it factors itself)
     return [num]
 
 def is_palindrome(num, mustsplit=False):
+    ''' Tests if number is a palindrome or not (if mustsplit=True) instead
+        splits palindrome and returns first segment.
+
+    Input: num > 1 (int), mustsplit (boolean, default =False)
+    Output: if mustsplit=False, whether num is palindrome (True/False)
+            if mustplit=True, returns first segment up to midpoint of num
+                              palindrome.
+    '''
     digits = list(str(num))
     assert len(digits) > 1, 'Palindrome must have more than one element to compare'
 
