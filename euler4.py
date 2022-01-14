@@ -63,9 +63,18 @@ def is_palindrome(num, mustsplit=False):
         return (seg1 == seg2)
 
 def find_largest_palindrome(base10):
+    ''' Finds and returns largest palindrome that can be multiplied from
+        two numbers with base10 count of digits. 
+        
+    Input: base10 (int)
+    Output: largest such palindrome as described above (int)
+    '''
+
+    # Sets parameters to search for all palindromes between
     toolarge = 10**(2 * base10)
     toosmall = 10**int(2*(base10-1.5))
 
+    # Starts with first palindrome, finds palindrome segment to iterate
     last_palindrome = toolarge-1
     iteration = int(is_palindrome(last_palindrome, True))
 
