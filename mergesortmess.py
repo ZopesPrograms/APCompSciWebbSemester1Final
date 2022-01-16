@@ -23,6 +23,13 @@ def binary_search(x, list):
       partial_lists.append([list[2*i]])
     print(partial_lists[i])'''
 
+''' [[[NOTICE:]]]
+
+    ALL FROM HERE ON OUT IS DEPRECATED CODE -- SINCE I DID NOT FINISH THE 
+    ALGORITHM, AND IT JUST DOES NOT WORK, I DIDN'T BOTHER TO COMMENT
+    IT MUCH, SINCE I WOULD JUST HAVE TO REMOVE AND CHANGE THE COMMENTS 
+    WHENEVER I BOTHER TO FIX IT. '''
+
 def sorted_merge(list1, list2):
   merged = []
 
