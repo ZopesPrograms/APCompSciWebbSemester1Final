@@ -33,6 +33,7 @@ def binary_search(x, list):
 def sorted_merge(list1, list2):
   merged = []
 
+  # All code from here on out merge sorts lists in one procedure
   if len(list1) > len(list2):
     while len(list2) > 0:
       if list2[-1] > list1[-1]:
@@ -51,6 +52,7 @@ def sorted_merge(list1, list2):
   return merged
 
 def equal_lists(list1, list2):
+  # function sets list1 to copy list2
   list1.clear()
   for e in list2:
     list1.append(e)
@@ -61,6 +63,7 @@ def binary_search_better(x, listv):
 
   divs_num = math.ceil(len(listv)/2)
 
+  # Divides list into different blocks to merge sort together
   for i in range(divs_num):
     try:
       if listv[2*i] < listv[(2*i)+1] :
@@ -73,7 +76,8 @@ def binary_search_better(x, listv):
 
   while len(partial_lists) < len(listv):
     divs_num = int(len(partial_lists)/2)
-    
+
+    # Merge sorts repeatedly and procedurally
     for d in range(divs_num):
       print('Merge a ' + str(2*d) + ' and a ' + str((2*d) + 1))
       time.sleep(1)
@@ -87,7 +91,10 @@ def binary_search_better(x, listv):
     equal_lists(partial_lists, temp_lists)
     print(str(partial_lists))
   print('Concluded')
+
+  # Returns result of merge sorts
   return partial_lists
 
+# Main block to run test code
 if __name__ == '__main__':
   print('Result is: ' + str(binary_search_better(1, [9, 2, 3, 4, 5, 1, 7, 8])))
